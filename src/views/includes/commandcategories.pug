@@ -1,0 +1,20 @@
+div(class='width-wrapper' style='--data-width-wrapper:100%;')
+	each category in commands
+		a(id='selector-'+category.name class='category-selector' href='#'+category.name) #{category.name}
+each category in commands
+	div(id='category-'+category.name style='display:none;')
+		each command in category.commands
+			div(class='width-wrapper')
+				div(class='section section-tile')
+					code(class='code-title') #{command.name} #{command.args}
+					br
+					p #{command.description}
+					br
+					p Examples:
+					ul
+						each example in command.examples
+							li.code #{example}
+					if command.aliases
+						p Aliases:
+						code #{command.aliases.join(', ')}
+					

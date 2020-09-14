@@ -1,0 +1,60 @@
+extends ../layout.pug
+
+block scripts
+	script(defer type='text/javascript' src='/js/socketio.js')
+	script(defer type='text/javascript' src='/js/ministats.js')
+
+block content
+	div(class='width-wrapper' style='--data-width-wrapper:100%;')
+		div(class='section')
+			h1(class='text-align-center section-heading') TomBot
+			hr
+			div(style='text-align: center;')
+				div(style='display: inline-block;width:33%;margin:0;padding:0;')
+					h2(id='stats-guilds') #{stats.guilds.toLocaleString()}
+					.
+						Servers
+				div(style='display: inline-block;width:33%;margin:0;padding:0;')
+					h2(id='stats-users') #{stats.users.toLocaleString()}
+					.
+						Users
+				div(style='display: inline-block;width:33%;margin:0;padding:0;')
+					h2(id='stats-streams') #{stats.totalVoiceConnections.toLocaleString()}
+					.
+						Streams
+	div(class='width-wrapper')
+		div(class='section')
+			h3(class='text-align-left section-heading') Fun Games
+			hr
+			div(class='section-content')
+				p(class='section-text') Need to spice up your server? TomBot has you covered.
+				p(class='section-text') Earn points by playing Hangman, Cards Against Humanity, Blackjack and Connect4.
+				p(class='section-text') Compete with other Tombot users and see if you can top the leaderboard.
+	div(class='width-wrapper')
+		div(class='section')
+			h3(class='text-align-left section-heading') Robust Music Playback
+			hr
+			div(class='section-content')
+				p(class='section-text') Play music from Youtube, SoundCloud, Spotify, Twitch and Radio.net.
+				p(class='section-text') Support for more audio sources is in the works.
+				p(class='section-text') With advanced playlist management features and endless music commands, TomBot is the last music bot you will ever need.
+	div(class='width-wrapper')
+		div(class='section')
+			h3(class='text-align-left section-heading') Easy Configuration 
+			hr
+			div(class='section-content')
+				p(class='section-text') Adjust TomBot's settings to suit your needs:
+				ul(style='padding:0px;list-style-type: circle;')
+					li Custom prefixes
+					li Queue length, vote skip, music loop
+					li Permissions for users & roles
+	div(class='width-wrapper')
+		div(class='section')
+			h3(class='text-align-left section-heading') Tools & Stats
+			hr
+			div(class='section-content')
+				ul(style='padding:0px;list-style-type: circle;')
+					li OldSchool Runescape wiki, GE and highscores
+					li Minecraft server status
+					li Overwatch stats
+					li Fun text commands

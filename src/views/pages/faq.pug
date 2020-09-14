@@ -1,0 +1,12 @@
+extends ../layout.pug
+
+block content
+	div(class="width-wrapper" style="--data-width-wrapper:100%;")
+		div(class='section')
+			h1(class='section-heading') Frequently Asked Questions
+			hr
+			div(class='section-content')
+				each qa in faq
+					h3 #{qa.question}
+					p #{qa.answer}
+					br
